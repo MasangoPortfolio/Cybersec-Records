@@ -4,7 +4,7 @@ cd - change directory
 cd .. - back
 cd /etc where system wide data exists 
 pwd - print working directory 
-find - Linux Search keyword syntax ' find ~ -name filename ' where ~ is starting point and -name is parameter search type 
+find - Linux Search keyword syntax ' find ~ -name filename ' where ~ is starting point home dir and -name is directory search type 
 ls - List 
 ls -l - List in more detail/ Long
 ls -al - List **all** long
