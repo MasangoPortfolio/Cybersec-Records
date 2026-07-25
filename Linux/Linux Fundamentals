@@ -1,0 +1,13 @@
+## File Traversal 
+
+cd - change directory 
+cd .. - back
+cd /etc where system wide data exists 
+pwd - print working directory 
+find - Linux Search keyword syntax ' find ~ -name filename ' where ~ is starting point and -name is parameter search type 
+ls - List 
+ls -l - List in more detail/ Long
+ls -al - List **all** long
+whoami - what username
+uname - OS kernl name 
+uname -a - system detail in more detail
