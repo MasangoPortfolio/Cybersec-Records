@@ -1,0 +1,8 @@
+## Windows Traversal 
+cd 
+cd ..
+dir - lists directorys 
+dir /a - lists hidden directorys
+dir /s filename - searches for file name 
+whoami - get user info
+systeminfo - display system info e.g. OS and OS version
