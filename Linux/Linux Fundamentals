@@ -11,3 +11,11 @@ ls -al - List **all** long
 whoami - what username
 uname - OS kernl name 
 uname -a - system detail in more detail
+
+## Logs
+
+ssh username@address/domain
+su - username : switch user to username 
+history 
+date
+
