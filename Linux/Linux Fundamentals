@@ -19,3 +19,12 @@ su - username : switch user to username
 history 
 date
 
+echo "This outputs this text"
+grep "Finx x" filename - Search inside for text 
+
+## Combining commands 
+&    refers to starting the command in the background so that the terminal cant do something else it s use is eg.  mkdir project &
+&&   if and only if logic  eg mkdir project && cd project && touch main.cpp
+>    Can be used to save output eg echo "example" > eg but it overites exesiting content 
+>>   Can be used to save output without overwiting it appends 
+
