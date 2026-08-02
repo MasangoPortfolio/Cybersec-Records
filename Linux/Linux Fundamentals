@@ -8,14 +8,27 @@ find - Linux Search keyword syntax ' find ~ -name filename ' where ~ is starting
 ls - List 
 ls -l - List in more detail/ Long
 ls -al - List **all** long
+ls -h - list in a human readable way
 whoami - what username
 uname - OS kernl name 
 uname -a - system detail in more detail
+touch : This creates a file
+mkdir newfolder
+rm : remove file or directory
+cp : copy file or directory eg cp a b copies contents of a to b
+mv file directory
+file : determine the file type
+
+/etc : contains system data
+/var : contains vairable data such as logs using /var/log
+/root
+/tmp : temporary similar to ram
 
 ## Logs
 
 ssh username@address/domain
 su - username : switch user to username 
+su -l username : switch user login to home directory
 history 
 date
 
