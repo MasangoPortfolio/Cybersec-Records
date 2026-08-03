@@ -41,3 +41,5 @@ grep "Finx x" filename - Search inside for text
 >    Can be used to save output eg echo "example" > eg but it overites exesiting content 
 >>   Can be used to save output without overwiting it appends 
 
+## Editing Files 
+nano textfile.txt 
