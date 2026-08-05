@@ -43,3 +43,8 @@ grep "Finx x" filename - Search inside for text
 
 ## Editing Files 
 nano textfile.txt 
+
+wget https://assets.masango.com/additional/linux-fundamentals/part3/myfile.txt // Web Get
+scp ubuntu@192.168.1.32:/home/ubuntu/documents.txt notes.txt  // Copy files from source on host
+python3 -m  http.server // Serving files from host
+wget http://10.49.183.54:8000/.flag.txt  port 8000 being python http sever
