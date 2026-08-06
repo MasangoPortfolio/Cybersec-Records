@@ -48,3 +48,22 @@ wget https://assets.masango.com/additional/linux-fundamentals/part3/myfile.txt /
 scp ubuntu@192.168.1.32:/home/ubuntu/documents.txt notes.txt  // Copy files from source on host
 python3 -m  http.server // Serving files from host
 wget http://10.49.183.54:8000/.flag.txt  port 8000 being python http sever
+
+ps // view processes currently running 
+ps aux // views process run by other users and not in the current session
+top // real time statistics on processes running on the system
+kill <PID> // used to end a process
+  SIGTERM - Kill the process, but allow it to do some cleanup tasks beforehand
+  SIGKILL - Kill the process - doesn't do any cleanup after the fact
+  SIGSTOP - Stop/suspend a process
+
+systemctl [option] [service] eg systemctl start apache2 // Act from system boot
+options are :
+  Start
+  Stop
+  Enable
+  Disable
+  Status
+
+ CTRL + Z is used to background a process
+fg is used to bring the background process back to terminal 
