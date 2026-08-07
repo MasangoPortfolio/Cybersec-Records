@@ -67,3 +67,8 @@ options are :
 
  CTRL + Z is used to background a process
 fg is used to bring the background process back to terminal 
+
+crontab -l // lists tasks and processes scheduled for execution 
+add-apt-repository
+
+Access and error logs can be found in apache2 of /var/logs
