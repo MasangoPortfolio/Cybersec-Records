@@ -1,0 +1,14 @@
+Public Key Cryptography also known as Asymmetric cryptograhy involves the use of 2 or more keys called the private key and public key that are mathemtically related to encryt and decrypt data
+
+RSA is a public key encryption algorthim that uses the multiplication of two large prime numbers 
+
+RSA algortihim ϕ(n) = n − p − q + 1 
+
+p and q are large prime numbers
+n is the product of p and q
+The public key is n and e
+The private key is n and d
+m is used to represent the original message, i.e., plaintext
+c represents the encrypted text, i.e., ciphertext
+
+Diffie-Hellman Key Exchange
