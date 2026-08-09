@@ -15,7 +15,8 @@ uname -a - system detail in more detail
 touch : This creates a file
 mkdir newfolder
 rm : remove file or directory
-cp : copy file or directory eg cp a b copies contents of a to b
+scp : copy file or directory eg scp user@domain:a b copies contents of a to b
+scp user@domain 
 mv file directory
 file : determine the file type
 
