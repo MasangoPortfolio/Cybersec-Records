@@ -72,3 +72,8 @@ crontab -l // lists tasks and processes scheduled for execution
 add-apt-repository
 
 Access and error logs can be found in apache2 of /var/logs
+
+gpg is used for signing , signing and encrypting and decryting data
+gpg --full-gen-key
+gpg --immport <keyname.key>
+gpg --decrypt <confidential_message.gpg>
