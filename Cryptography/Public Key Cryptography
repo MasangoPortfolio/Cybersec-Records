@@ -12,3 +12,25 @@ m is used to represent the original message, i.e., plaintext
 c represents the encrypted text, i.e., ciphertext
 
 Diffie-Hellman Key Exchange
+Its based on key exchange meanining  that it aims to establish a shared secret between two parties 
+p = prime number
+g = generator/base
+a = Alice's private key
+b = Bob's private key
+A = Alice's public key
+B = Bob's public key
+K = shared secret
+
+Formulas:
+
+A=g
+a
+modp
+B=g
+b
+modp
+K=A
+b
+modp=B
+a
+modp
