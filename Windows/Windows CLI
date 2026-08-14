@@ -1,8 +1,18 @@
 ## Windows Traversal 
+cls - clears cmd interface
 cd 
 cd ..
 dir - lists directorys 
 dir /a - lists hidden directorys
 dir /s filename - searches for file name 
 whoami - get user info
+hostname - get hostname 
 systeminfo - display system info e.g. OS and OS version
+
+ipconfig displays network address settings for computer 
+ipconfig /? help command for ipconfigue
+
+netstat - Displays Protocol settings for the current  TCP/IP network connections
+net - manage ntetwork resources 
+net help - display help menu for net
+
