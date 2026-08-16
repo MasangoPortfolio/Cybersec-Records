@@ -609,35 +609,3 @@ MIN()
 MAX()
 ```
 
-## Mental Model
-
-Remember SQL as:
-
-```text
-DATABASE
-   ↓
-TABLE
-   ↓
-COLUMNS + ROWS
-   ↓
-SELECT
-   ↓
-FROM
-   ↓
-WHERE
-   ↓
-ORDER BY
-   ↓
-LIMIT
-```
-
-And CRUD:
-
-```text
-CREATE → INSERT
-READ   → SELECT
-UPDATE → UPDATE
-DELETE → DELETE
-```
-
-For the **Cyber Security 101 level**, you don't need to memorise every SQL feature. You mainly want to be comfortable looking at a query and immediately understanding **what data it's accessing, what table it's accessing, what conditions it's applying, and what it's doing to the data**.
