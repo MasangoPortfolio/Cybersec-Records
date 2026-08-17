@@ -1,0 +1,144 @@
+# Active Directory Domain Services (AD DS)
+
+## Core Concept
+
+* **AD DS** is the core service behind a Windows Domain.
+* It acts as a **centralised catalogue/database** containing network objects such as:
+
+  * Users
+  * Groups
+  * Computers
+  * Printers
+  * Shares
+* The server running AD DS is called a **Domain Controller (DC)**.
+
+## Security Principals
+
+A **security principal** is an object that can be authenticated and assigned permissions to resources.
+
+Common security principals:
+
+* **Users**
+* **Computers**
+* **Security Groups**
+
+### Users
+
+Users can represent:
+
+* **People** — employees or other network users.
+* **Services** — accounts used to run services such as IIS or MSSQL.
+
+Service accounts should generally have only the permissions required to perform their function.
+
+### Machine Accounts
+
+Every computer that joins a domain gets a **machine account** in Active Directory.
+
+Machine accounts:
+
+* Are security principals.
+* Have limited rights within the domain.
+* Are normally used by the computer itself.
+* Have passwords that automatically rotate.
+* Use the naming convention:
+
+`COMPUTERNAME$`
+
+Example:
+
+`DC01` → `DC01$`
+
+**Exam tip:** If a question asks for the machine account of `TOM-PC`, the answer is **`TOM-PC$`**.
+
+## Security Groups
+
+Security groups allow permissions to be assigned to multiple users/computers at once.
+
+Important default groups:
+
+| Group                  | Purpose                                                                 |
+| ---------------------- | ----------------------------------------------------------------------- |
+| **Domain Admins**      | Administrative privileges across the domain                             |
+| **Server Operators**   | Can administer Domain Controllers                                       |
+| **Backup Operators**   | Can access files for backup purposes, bypassing normal file permissions |
+| **Account Operators**  | Can create/modify domain accounts                                       |
+| **Domain Users**       | Contains domain user accounts                                           |
+| **Domain Computers**   | Contains domain computers                                               |
+| **Domain Controllers** | Contains Domain Controllers                                             |
+
+**Key point:** **Domain Admins** can generally administer computers throughout the domain, including Domain Controllers.
+
+## Organizational Units (OUs)
+
+**OUs** are containers used to organise users and computers.
+
+Common uses:
+
+* Group objects by department or function.
+* Apply **Group Policy** to specific users/computers.
+* Organise the Active Directory structure.
+
+Example:
+
+`MYCompany`
+→ `IT`
+→ `Management`
+→ `Marketing`
+→ `R&D`
+→ `Sales`
+
+A user/computer can be placed in only **one OU at a time**.
+
+## Security Groups vs OUs
+
+|              | OUs                               | Security Groups                |
+| ------------ | --------------------------------- | ------------------------------ |
+| Main purpose | Apply policies & organise objects | Grant permissions              |
+| Example      | Apply IT policies                 | Give access to a shared folder |
+| Membership   | One OU at a time                  | Can belong to multiple groups  |
+
+**Easy way to remember:**
+
+> **OU = Organise & apply policies**
+> **Group = Grant permissions**
+
+## Default AD Containers
+
+* **Builtin** — default groups available to Windows hosts.
+* **Computers** — computers joining the domain are placed here by default.
+* **Domain Controllers** — contains Domain Controllers.
+* **Users** — default domain users and groups.
+* **Managed Service Accounts** — accounts used by services.
+
+## Windows Domain
+
+A **Windows Domain** is a collection of users and computers centrally administered by an organisation.
+
+The main benefits are:
+
+1. **Centralised identity management**
+
+   * User accounts are managed centrally through AD.
+
+2. **Centralised security policies**
+
+   * Policies can be deployed across users and computers.
+
+### Real-world example
+
+On a university network, you can log into different campus computers using the same username/password.
+
+Instead of every computer maintaining a separate copy of your credentials, the computer can authenticate you against the **Domain Controller**.
+
+## Key Terms to Remember
+
+* **AD DS** → Service providing Active Directory functionality.
+* **Active Directory (AD)** → Central directory of domain objects.
+* **Domain Controller (DC)** → Server running AD DS.
+* **Security Principal** → Object that can be authenticated and assigned permissions.
+* **Machine Account** → Computer's AD account, normally ending in `$`.
+* **OU** → Container used to organise objects and apply policies.
+* **Security Group** → Used primarily to assign permissions.
+* **Domain Admins** → Highly privileged domain administration group.
+
