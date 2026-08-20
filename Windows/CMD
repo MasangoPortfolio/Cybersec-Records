@@ -1,3 +1,5 @@
+help
+
 ## Windows Traversal 
 cls - clears cmd interface
 cd 
@@ -5,20 +7,38 @@ cd ..
 dir - lists directorys 
 dir /a - lists hidden directorys
 dir /s filename - searches for file name 
+tree  visually represent the child directories and subdirectories.
 whoami - get user info
 hostname - get hostname 
 systeminfo - display system info e.g. OS and OS version
+type textfile view textfiles 
+copy *.md C:\Markdown  copy all mdfiles to dir Markdown
+move source dest
+del filename 
+erase filename 
 
 ipconfig displays network address settings for computer 
 ipconfig /? help command for ipconfigue
+ipconfig /all
 
 netstat - Displays Protocol settings for the current  TCP/IP network connections
+netstat -h displays the helppage
+          -a displays all established connections and listening ports
+          -b shows the program associated with each listening port and established connection
+          -o reveals the process ID (PID) associated with the connection
+          -n uses a numerical form for addresses and port numbers
+
 net - manage ntetwork resources 
 net help - display help menu for net
 
+tracert <target>  this traces the network route used to reach the target
+
 ping url - Quick way to get Ip address of a website and also check whther the websute receives packets/ is running
+nslookup example.com it looks up host or domain and returns its IP
 
 set checks path
 ver determine the operating system
 systeminfo
+
+more this activates page after page e.g help | more and use CTRL + C to exit 
 
