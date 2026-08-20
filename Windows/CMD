@@ -18,3 +18,7 @@ net help - display help menu for net
 
 ping url - Quick way to get Ip address of a website and also check whther the websute receives packets/ is running
 
+set checks path
+ver determine the operating system
+systeminfo
+
