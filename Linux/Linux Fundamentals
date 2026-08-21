@@ -25,6 +25,9 @@ file : determine the file type
 /root
 /tmp : temporary similar to ram
 
+## Shells
+zsh 
+
 ## Logs
 
 ssh username@address/domain
