@@ -1,83 +1,157 @@
-## File Traversal 
+# Linux Fundamentals — Command Cheat Sheet
 
-cd - change directory 
-cd .. - back
-cd /etc where system wide data exists 
-pwd - print working directory 
-find - Linux Search keyword syntax ' find ~ -name filename ' where ~ is starting point home dir and -name is directory search type 
-ls - List 
-ls -l - List in more detail/ Long
-ls -al - List **all** long
-ls -h - list in a human readable way
-whoami - what username
-uname - OS kernl name 
-uname -a - system detail in more detail
-touch : This creates a file
-mkdir newfolder
-rm : remove file or directory
-scp : copy file or directory eg scp user@domain:a b copies contents of a to b
-scp user@domain 
-mv file directory
-file : determine the file type
+## File Traversal
 
-/etc : contains system data
-/var : contains vairable data such as logs using /var/log
-/root
-/tmp : temporary similar to ram
+```bash
+cd <directory>          # Change directory
+cd ..                   # Go back one directory
+cd /etc                 # System-wide configuration/data
+pwd                     # Print working directory
+
+find ~ -name <filename> # Search from home directory by filename
+
+ls                      # List files
+ls -l                   # Long/detailed listing
+ls -al                  # List all files in long format
+ls -h                   # Human-readable file sizes
+
+whoami                  # Display current username
+
+uname                   # Display kernel name
+uname -a                # Display detailed system information
+
+touch <file>            # Create a file
+mkdir <directory>       # Create a directory
+rm <file>               # Remove a file/directory
+mv <file> <directory>   # Move a file/directory
+file <file>             # Determine file type
+```
+
+### Important Directories
+
+```text
+/etc     System-wide configuration/data
+/var     Variable data, such as logs (/var/log)
+/root    Root user's home directory
+/tmp     Temporary files
+```
 
 ## Shells
-zsh 
 
-## Logs
+```text
+zsh
+```
 
-ssh username@address/domain
-su - username : switch user to username 
-su -l username : switch user login to home directory
-history 
-date
+## Users, Logs & System Information
 
-echo "This outputs this text"
-grep "Finx x" filename - Search inside for text 
+```bash
+ssh <username>@<address/domain>    # Connect to a remote host
 
-## Combining commands 
-&    refers to starting the command in the background so that the terminal cant do something else it s use is eg.  mkdir project &
-&&   if and only if logic  eg mkdir project && cd project && touch main.cpp
->    Can be used to save output eg echo "example" > eg but it overites exesiting content 
->>   Can be used to save output without overwiting it appends 
+su - <username>                    # Switch user
+su -l <username>                   # Switch user with login environment
 
-## Editing Files 
-nano textfile.txt 
+history                            # View command history
+date                               # Display current date/time
 
-wget https://assets.masango.com/additional/linux-fundamentals/part3/myfile.txt // Web Get
-scp ubuntu@192.168.1.32:/home/ubuntu/documents.txt notes.txt  // Copy files from source on host
-python3 -m  http.server // Serving files from host
-wget http://10.49.183.54:8000/.flag.txt  port 8000 being python http sever
+echo "This outputs this text"      # Output text
 
-ps // view processes currently running 
-ps aux // views process run by other users and not in the current session
-top // real time statistics on processes running on the system
-kill <PID> // used to end a process
-  SIGTERM - Kill the process, but allow it to do some cleanup tasks beforehand
-  SIGKILL - Kill the process - doesn't do any cleanup after the fact
-  SIGSTOP - Stop/suspend a process
+grep "Find x" <filename>           # Search for text inside a file
+```
 
-systemctl [option] [service] eg systemctl start apache2 // Act from system boot
-options are :
-  Start
-  Stop
-  Enable
-  Disable
-  Status
+## Combining Commands
 
- CTRL + Z is used to background a process
-fg is used to bring the background process back to terminal 
+```bash
+mkdir project &                    # Run command in the background
 
-crontab -l // lists tasks and processes scheduled for execution 
-add-apt-repository
+mkdir project && cd project && touch main.cpp
+# Run next command only if the previous command succeeds
 
-Access and error logs can be found in apache2 of /var/logs
+echo "example" > file.txt          # Write output; overwrites existing content
 
-gpg is used for signing , signing and encrypting and decryting data
-gpg --full-gen-key
-gpg --immport <keyname.key>
-gpg --decrypt <confidential_message.gpg>
+echo "example" >> file.txt        # Append output without overwriting
+```
+
+## File Transfer & Web Servers
+
+```bash
+wget <URL>                         # Download a file
+
+scp <source> <destination>         # Securely copy files
+
+scp user@domain:a b                # Copy 'a' from remote host to 'b'
+
+scp ubuntu@192.168.1.32:/home/ubuntu/documents.txt notes.txt
+# Copy a remote file to the local machine
+
+python3 -m http.server              # Start a Python HTTP server
+
+wget http://10.49.183.54:8000/.flag.txt
+# Download a file from a server running on port 8000
+```
+
+## Editing Files
+
+```bash
+nano <filename>                    # Edit a file
+```
+
+## Processes
+
+```bash
+ps                                 # View currently running processes
+ps aux                             # View processes from all users
+top                                # Real-time process statistics
+
+kill <PID>                         # Terminate a process
+```
+
+### Signals
+
+```text
+SIGTERM    Terminate process and allow cleanup
+SIGKILL    Immediately terminate process
+SIGSTOP    Stop/suspend a process
+```
+
+```bash
+Ctrl + Z                            # Suspend/background a process
+fg                                  # Bring a background process to the terminal
+```
+
+## Services — systemctl
+
+```bash
+systemctl [option] [service]
+
+systemctl start apache2            # Start service
+systemctl stop apache2             # Stop service
+systemctl enable apache2           # Enable service at boot
+systemctl disable apache2          # Disable service at boot
+systemctl status apache2            # View service status
+```
+
+## Scheduled Tasks
+
+```bash
+crontab -l                         # List scheduled cron jobs
+
+add-apt-repository                 # Add an APT repository
+```
+
+## Apache Logs
+
+```text
+/var/log/apache2/
+```
+
+Apache access and error logs are stored here.
+
+## GPG
+
+```bash
+gpg --full-gen-key                 # Generate a GPG key
+gpg --import <keyname.key>         # Import a key
+gpg --decrypt <confidential_message.gpg>  # Decrypt a file
+```
+
+GPG can be used for **signing, encryption, and decryption**.
