@@ -1,36 +1,87 @@
-Public Key Cryptography also known as Asymmetric cryptograhy involves the use of 2 or more keys called the private key and public key that are mathemtically related to encryt and decrypt data
+# Public Key Cryptography
 
-RSA is a public key encryption algorthim that uses the multiplication of two large prime numbers 
+## Asymmetric Cryptography
 
-RSA algortihim ϕ(n) = n − p − q + 1 
+**Public Key Cryptography**, also known as **Asymmetric Cryptography**, uses two mathematically related keys:
 
-p and q are large prime numbers
-n is the product of p and q
-The public key is n and e
-The private key is n and d
-m is used to represent the original message, i.e., plaintext
-c represents the encrypted text, i.e., ciphertext
+* **Public key** — used for encryption or verification
+* **Private key** — used for decryption or signing
 
-Diffie-Hellman Key Exchange
-Its based on key exchange meanining  that it aims to establish a shared secret between two parties 
+---
+
+## RSA
+
+**RSA** is a public-key encryption algorithm based on the difficulty of factoring the product of two large prime numbers.
+
+### Variables
+
+```text
+p = large prime number
+q = large prime number
+n = p × q
+
+e = public exponent
+d = private exponent
+
+m = original message (plaintext)
+c = encrypted message (ciphertext)
+```
+
+### Euler's Totient Function
+
+```text
+φ(n) = (p − 1)(q − 1)
+
+     = pq − p − q + 1
+```
+
+### Keys
+
+```text
+Public key  = (n, e)
+Private key = (n, d)
+```
+
+---
+
+## Diffie-Hellman Key Exchange
+
+**Diffie-Hellman (DH)** is a key-exchange method used to establish a **shared secret** between two parties over an insecure channel.
+
+### Variables
+
+```text
 p = prime number
 g = generator/base
+
 a = Alice's private key
 b = Bob's private key
+
 A = Alice's public key
 B = Bob's public key
+
 K = shared secret
+```
 
-Formulas:
+### Formulas
 
-A=g
-a
-modp
-B=g
-b
-modp
-K=A
-b
-modp=B
-a
-modp
+**Alice's public key:**
+
+```text
+A = gᵃ mod p
+```
+
+**Bob's public key:**
+
+```text
+B = gᵇ mod p
+```
+
+**Shared secret:**
+
+```text
+K = Aᵇ mod p
+K = Bᵃ mod p
+```
+
+Both Alice and Bob independently calculate the same **K**, without directly transmitting the shared secret.
