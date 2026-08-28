@@ -155,3 +155,5 @@ gpg --decrypt <confidential_message.gpg>  # Decrypt a file
 ```
 
 GPG can be used for **signing, encryption, and decryption**.
+
+ md5sum, sha1sum, sha256sum, and sha512sum filetype
