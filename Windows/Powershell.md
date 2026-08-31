@@ -9,6 +9,7 @@ Get-Help Set-Noun
 
 # List available commands
 Get-Command
+
 Get-Alias
 
 # List commands by type
